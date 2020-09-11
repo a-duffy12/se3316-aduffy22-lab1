@@ -5,6 +5,10 @@ header {
     text-align: center;
 }
 
+header h1.page-title {
+    font-size: 50px;
+}
+
 header div.search-bar {
     display: flex;
     align-items: flex-start;
