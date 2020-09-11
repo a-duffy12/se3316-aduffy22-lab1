@@ -1,0 +1,92 @@
+header {
+    background: red;
+    color: black;
+    margin: -10px;
+    padding: 20px;
+    text-align: center;
+}
+
+body {
+    background: black;
+}
+
+footer {
+    background: white;
+    color: black;
+    padding: 20px;
+    text-align: center;
+}
+
+body ul {
+    list-style-type: none; /* remove bullets */
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+body ul li {
+    margin: 40px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-style: solid;
+    border-width: 20px;
+}
+
+body ul li h1 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+body ul li h2 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+body ul li.bulbasaur {
+    background: #78C850;
+    border-color: #A040A0;
+}
+
+body ul li.charmander {
+    background: #F08030;
+    border-color: #F08030;
+}
+
+body ul li.charizard {
+    background: #F08030;
+    border-color: #A890F0;
+}
+
+body ul li.squirtle {
+    background: #6890F0;
+    border-color: #6890F0;
+}
+
+body ul li.caterpie {
+    background: #A8B820;
+    border-color: #A8B820;
+}
+
+body ul li.butterfree {
+    background: #A8B820;
+    border-color: #A890F0;
+}
+
+body ul li.weedle {
+    background: #A8B820;
+    border-color: #A040A0; 
+}
+
+body ul li.pidgey {
+    background: #A890F0;
+    border-color: #A8A878;
+}
+
+body ul li.rattata {
+    background: #A8A878;
+    border-color: #A8A878;
+}
