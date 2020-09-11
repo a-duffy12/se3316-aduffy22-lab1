@@ -1,20 +1,55 @@
 header {
     background: red;
     color: black;
-    margin: -10px;
     padding: 20px;
     text-align: center;
+}
+
+header div.search-bar {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+header div.search-name {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+header div.search-number {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+header div input {
+    height: 40px;
+    width: 240px;
+    font-size: 1.5em;
+    color: black;
+    background: red;
+    border-style: solid;
+    border-width: 5px;
+    border-color: black;
+    border-radius: 20px;
+    margin: 20px;
+}
+
+header div button {
+    height: 52px;
+    width: 100px;
+    font-size: 1.5em;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    background: red;
+    border-style: solid;
+    border-width: 5px;
+    border-color: black;
+    border-radius: 20px;
 }
 
 body {
     background: black;
-}
-
-footer {
-    background: white;
-    color: black;
-    padding: 20px;
-    text-align: center;
 }
 
 body ul {
@@ -22,8 +57,8 @@ body ul {
     padding: 10px;
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: center;
+    align-items: flex-start; /* justify vertically */
+    justify-content: center; /* justify horizontally */
 }
 
 body ul li {
@@ -89,4 +124,11 @@ body ul li.pidgey {
 body ul li.rattata {
     background: #A8A878;
     border-color: #A8A878;
+}
+
+footer {
+    background: #eeeeee;
+    color: black;
+    padding: 20px;
+    text-align: center;
 }
