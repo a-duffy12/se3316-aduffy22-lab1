@@ -10,15 +10,14 @@
 </head>
 <header>
     <h1 class="page-title">Pokédex</h1>
-    <script type="text/javascript" src="scripts.js"></script>
     <div class="search-bar">
-        <div class="search-name">
-            <input type="text" placeholder="Search by Name">
-            <button>Search</button>
-        </div>
         <div class="search-number">
-            <input type="number" placeholder="Seach by Number">
-            <button>Search</button>
+            <input id="number-input" type="number" placeholder="Seach by Number" min="1" max="20">
+            <button id="number-button">Search</button>
+        </div>
+        <div class="search-name">
+            <input id="name-input" type="text" placeholder="Search by Name" maxlength="20">
+            <button id="name-button" onclick="searchName()">Search</button>
         </div>
     </div>
 </header>
@@ -126,6 +125,7 @@
             <img src="pokemon/20.png" alt="Raticate">
         </li>
     </ul>
+    <script type="text/javascript" src="scripts.js"></script>
 </body>
 <footer>
     <h1>References</h1>
@@ -134,5 +134,4 @@
     <p><a href="https://www.kaggle.com/kvpratama/pokemon-images-dataset" target="_blank">Pokémon data set</a></p>
     <p><a href="https://www.reddit.com/r/TheSilphRoad/comments/7p952h/pokemon_go_pokedex_spreadsheet/" target="_blank">Pokémon Excel</a></p>
 </footer>
-
 </html>
