@@ -30,7 +30,7 @@ header div input {
     width: 240px;
     font-size: 1.5em;
     color: black;
-    background: red;
+    background: #eeeeee;
     border-style: solid;
     border-width: 5px;
     border-color: black;
@@ -45,7 +45,7 @@ header div button {
     color: black;
     font-weight: bold;
     text-align: center;
-    background: red;
+    background: #eeeeee;
     border-style: solid;
     border-width: 5px;
     border-color: black;
@@ -95,6 +95,11 @@ body ul li.charmander {
 body ul li.charizard {
     background: #F08030;
     border-color: #A890F0;
+}
+
+body ul li.mega-charizard {
+    background: #F08030;
+    border-color: #7038F8; 
 }
 
 body ul li.squirtle {
