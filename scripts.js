@@ -47,7 +47,7 @@ function searchName()
     li = ul.getElementsByTagName("li"); // get elements in the list
     show = 0; // no results yet showing
 
-    if (/^[a-zA-Z]+$/.test(searchText)) // check if search contains only letters
+    if ((/^[a-zA-Z]+$/.test(searchText)) && (searchText.length <= 20)) // check if search contains only letters
     {
         for (i=0; i<li.length; i++) // iterate through each list element
         {
