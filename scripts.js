@@ -17,7 +17,7 @@ function searchNumber()
             val = numbers.textContent || numbers.innerText; // get text of h2 element
             searchNum = Number(val.substring(2,4)); // get numerical value of list element
 
-            if ((searchNum == input.value) && show < 5) // if the number matches a pokemon in the dex and less than 5 results are shown
+            if ((searchNum.toString().indexOf(input.value.toString()) > -1) && show < 5) // if the number matches a pokemon in the dex and less than 5 results are shown
             {
                 li[i].style.display = "list-item"; // keep showing result
                 show++; // increase number of shown
