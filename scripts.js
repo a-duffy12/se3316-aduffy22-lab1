@@ -3,11 +3,12 @@
 // function to search for a pokemon by number
 function searchNumber()
 {
-    let input, searchNum, ul, li, i, numbers, val, show;
+    let input, searchNum, ul, li, i, numbers, val, show, res;
     input = document.getElementById("number-input"); // get input from element
     ul = document.getElementById("pokemon-list"); // get list
     li = ul.getElementsByTagName("li"); // get elements in the list
     show = 0; // no results yet showing
+    res = 0; // no results yet found
 
     if ((input.value >= 1) && (input.value <= 20))
     {
@@ -21,12 +22,28 @@ function searchNumber()
             {
                 li[i].style.display = "list-item"; // keep showing result
                 show++; // increase number of shown
+                res++; // increase number of results
+            }
+            else if ((searchNum.toString().indexOf(input.value.toString()) > -1) && show >= 5) // if 5 results have been found, but more are available
+            {
+                li[i].style.display = "none"; // hide excess results
+                res++; // increase number of results
             }
             else
             {
                 li[i].style.display = "none"; // hide incorrect results
             }
         }
+
+        if (show ==  res)
+        {
+            alert(show + " results found!"); // popup of how many results were found
+        }
+        else 
+        {
+            alert(res + " results found!\nDisplaying first 5"); // popup of how many results were found
+        }        
+        
     }
     else if (input.value.length == 0) // if there is no search input
     {
@@ -40,12 +57,13 @@ function searchNumber()
 // function to search for a pokemon by name
 function searchName()
 {
-    let input, searchText, ul, li, i, names, val, show;
+    let input, searchText, ul, li, i, names, val, show, res;
     input = document.getElementById("name-input"); // get input from element
     searchText = input.value.toLowerCase(); // switch to lower case
     ul = document.getElementById("pokemon-list"); // get list
     li = ul.getElementsByTagName("li"); // get elements in the list
     show = 0; // no results yet showing
+    res = 0; // no results yet found
 
     if ((/^[a-zA-Z]+$/.test(searchText)) && (searchText.length <= 20)) // check if search contains only letters
     {
@@ -58,11 +76,26 @@ function searchName()
             {
                 li[i].style.display = "list-item"; // keep showing result
                 show++; // increase number of shown
+                res++; // increase number of results
+            }
+            else if ((val.toLowerCase().indexOf(searchText) > -1) && show >= 5) // if 5 results have been found, but more are available
+            {
+                li[i].style.display = "none"; // hide excess results
+                res++; // increase number of results
             }
             else
             {
                 li[i].style.display = "none"; // hide incorrect results
             }
+        }
+
+        if (show ==  res)
+        {
+            alert(show + " results found!"); // popup of how many results were found
+        }
+        else 
+        {
+            alert(res + " results found!\nDisplaying first 5"); // popup of how many results were found
         }
     }
     else if (input.value.length == 0) // if there is no search input
