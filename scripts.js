@@ -52,6 +52,10 @@ function searchNumber()
             li[i].style.display = "list-item"; // show all list elements
         }
     }
+    else if ((input.value < 1) || (input.value > 20))
+    {
+        alert("Error: input must be within 1 and 20")
+    }
 }
 
 // function to search for a pokemon by name
@@ -104,5 +108,17 @@ function searchName()
         {
             li[i].style.display = "list-item"; // show all list elements
         }
+    }
+    else if ((/^[a-zA-Z]+$/.test(searchText)) && (searchText.length > 20))
+    {
+        alert("Error: input cannot exceed 20 characters");
+    }
+    else if (searchText.length <= 20)
+    {
+        alert("Error: input can only include characters A-Z and a-z");
+    }
+    else if (searchText.length > 20)
+    {
+        alert("Error: input can only include characters A-Z and a-z and cannot exceet 20 characters");
     }
 }
