@@ -56,6 +56,10 @@ body {
     background: black;
 }
 
+body div.results-list {
+    background: aqua;
+}
+
 body ul {
     list-style-type: none; /* remove bullets */
     padding: 10px;
