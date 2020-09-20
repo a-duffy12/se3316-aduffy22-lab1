@@ -60,11 +60,13 @@ body {
     background: #910505;
     color: black;
     text-align: center;
+    padding-top: 20px;
 }
 
 #results-list {
     background:  #910505;
     color: black;
+    text-align: left;
 }
 
 body ul {
