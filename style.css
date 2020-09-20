@@ -56,8 +56,12 @@ body {
     background: black;
 }
 
-body div.results-list {
+body div.results-div {
     background: aqua;
+}
+
+body div ul.results-list {
+    background: lime;
 }
 
 body ul {
