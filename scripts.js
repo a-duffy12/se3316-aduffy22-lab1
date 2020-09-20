@@ -1,5 +1,12 @@
 // javascript file
 
+// function 
+
+// bools to track if the created elements are active or not
+let numActive, nameActive;
+numActive = false;
+nameActive = false;
+
 // function to search for a pokemon by number
 function searchNumber()
 {
@@ -11,20 +18,25 @@ function searchNumber()
 
     if ((input.value >= 1) && (input.value <= 20))
     {
-        // create div and ul
-        let newDiv = document.createElement("div");
-        let newUl = document.createElement("ul");
+        if (!numActive && !nameActive) // if no search is already active
+        {
+            // create div and ul
+            let newDiv = document.createElement("div");
+            let newUl = document.createElement("ul");
 
-        // set ids for new elements
-        newDiv.setAttribute("id", "results-div");
-        newUl.setAttribute("id", "results-list");
+            // set ids for new elements
+            newDiv.setAttribute("id", "results-div");
+            newUl.setAttribute("id", "results-list");
 
-        let newTitle = document.createElement("h1"); // create h1
-        let titleContent = document.createTextNode("Search Results"); // create text
-        newTitle.appendChild(titleContent); // add text to h1
-        newDiv.appendChild(newTitle); // add h1 to div
+            let newTitle = document.createElement("h1"); // create h1
+            let titleContent = document.createTextNode("Search Results"); // create text
+            newTitle.appendChild(titleContent); // add text to h1
+            newDiv.appendChild(newTitle); // add h1 to div
 
-        document.body.insertBefore(newDiv, ul); // add div to DOM
+            document.body.insertBefore(newDiv, ul); // add div to DOM
+
+            numActive = true; // number search is active
+        }
 
         for (i=0; i<li.length; i++) // iterate through each list element
         {
@@ -44,6 +56,8 @@ function searchNumber()
         // remove newly created div and all its children
         let removeDiv = document.getElementById("results-div");
         removeDiv.remove();
+        numActive = false; // number search no longer active
+        nameActive = false; // name search no longer active
     }
     else if ((input.value < 1) || (input.value > 20))
     {
@@ -63,20 +77,25 @@ function searchName()
 
     if ((/^[a-zA-Z]+$/.test(searchText)) && (searchText.length <= 20)) // check if search contains only letters
     {
-         // create div and ul
-        let newDiv = document.createElement("div");
-        let newUl = document.createElement("ul");
+        if (!nameActive && !numActive)
+        {
+            // create div and ul
+            let newDiv = document.createElement("div");
+            let newUl = document.createElement("ul");
 
-        // set ids for new elements
-        newDiv.setAttribute("id", "results-div");
-        newUl.setAttribute("id", "results-list");
+            // set ids for new elements
+            newDiv.setAttribute("id", "results-div");
+            newUl.setAttribute("id", "results-list");
 
-        let newTitle = document.createElement("h1"); // create h1
-        let titleContent = document.createTextNode("Search Results"); // create text
-        newTitle.appendChild(titleContent); // add text to h1
-        newDiv.appendChild(newTitle); // add h1 to div
+            let newTitle = document.createElement("h1"); // create h1
+            let titleContent = document.createTextNode("Search Results"); // create text
+            newTitle.appendChild(titleContent); // add text to h1
+            newDiv.appendChild(newTitle); // add h1 to div
 
-        document.body.insertBefore(newDiv, ul); // add div to DOM
+            document.body.insertBefore(newDiv, ul); // add div to DOM
+
+            nameActive = true; // name search is active
+        }
 
         for (i=0; i<li.length; i++) // iterate through each list element
         {
@@ -95,6 +114,8 @@ function searchName()
         // remove newly created div and all its children
         let removeDiv = document.getElementById("results-div");
         removeDiv.remove();
+        nameActive = false; // name search is no longer active
+        numActive = false; // number search is no longer active
     }
     else if ((/^[a-zA-Z]+$/.test(searchText)) && (searchText.length > 20))
     {
