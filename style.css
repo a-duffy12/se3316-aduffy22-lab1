@@ -56,12 +56,15 @@ body {
     background: black;
 }
 
-body div.results-div {
-    background: aqua;
+#results-div {
+    background: #910505;
+    color: black;
+    text-align: center;
 }
 
-body div ul.results-list {
-    background: lime;
+#results-list {
+    background:  #910505;
+    color: black;
 }
 
 body ul {

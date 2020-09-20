@@ -19,6 +19,13 @@ function searchNumber()
         newDiv.setAttribute("id", "results-div");
         newUl.setAttribute("id", "results-list");
 
+        let newTitle = document.createElement("h1"); // create h1
+        let titleContent = document.createTextNode("Search Results"); // create text
+        newTitle.appendChild(titleContent); // add text to h1
+        newDiv.appendChild(newTitle); // add h1 to div
+
+        document.body.insertBefore(newDiv, ul); // add div to DOM
+
         for (i=0; i<li.length; i++) // iterate through each list element
         {
             numbers = li[i].getElementsByTagName("h2")[0]; // get h1 of each list element
@@ -63,6 +70,13 @@ function searchName()
         // set ids for new elements
         newDiv.setAttribute("id", "results-div");
         newUl.setAttribute("id", "results-list");
+
+        let newTitle = document.createElement("h1"); // create h1
+        let titleContent = document.createTextNode("Search Results"); // create text
+        newTitle.appendChild(titleContent); // add text to h1
+        newDiv.appendChild(newTitle); // add h1 to div
+
+        document.body.insertBefore(newDiv, ul); // add div to DOM
 
         for (i=0; i<li.length; i++) // iterate through each list element
         {
