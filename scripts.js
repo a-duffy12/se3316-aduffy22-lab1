@@ -8,10 +8,11 @@ nameActive = false;
 // function to search for a pokemon by number
 function searchNumber()
 {
-    let input, searchNum, ul, li, i, numbers, val;
+    let input, searchNum, ul, li, i, numbers, val, res;
     input = document.getElementById("number-input"); // get input from element
     ul = document.getElementById("pokemon-list"); // get list
     li = ul.getElementsByTagName("li"); // get elements in the list
+    res = 0; // initially there are no search results
 
     if ((input.value >= 1) && (input.value <= 20))
     {
@@ -27,8 +28,11 @@ function searchNumber()
             if (searchNum.toString().indexOf(input.value.toString()) > -1) // if the number matches a pokemon in the dex
             {
                 displayResults(li[i]); // display search results
+                res++; // increase number of search results
             }
-        }       
+        } 
+        
+        resultCount(res); // display number of results
     }
     else if (input.value.length == 0) // if there is no search input
     {
@@ -43,11 +47,12 @@ function searchNumber()
 // function to search for a pokemon by name
 function searchName()
 {
-    let input, searchText, ul, li, i, names, val;
+    let input, searchText, ul, li, i, names, val, res;
     input = document.getElementById("name-input"); // get input from element
     searchText = input.value.toLowerCase(); // switch to lower case
     ul = document.getElementById("pokemon-list"); // get list
     li = ul.getElementsByTagName("li"); // get elements in the list
+    res = 0; // initially there are no search results
 
     if ((/^[a-zA-Z]+$/.test(searchText)) && (searchText.length <= 20)) // check if search contains only letters
     {
@@ -62,8 +67,11 @@ function searchName()
             if (val.toLowerCase().indexOf(searchText) > -1) // if the name is in the search
             {
                 displayResults(li[i]); // display search results
+                res++; // increase number of search results
             }
-        } 
+        }
+        
+        resultCount(res); // display number of results
     }
     else if (input.value.length == 0) // if there is no search input
     {
@@ -90,18 +98,22 @@ function buildContainer()
 
     if (!nameActive && !numActive)
     {
-        // create div and ul
+        // create div, h1, and ul
         let newDiv = document.createElement("div");
+        let newTitle = document.createElement("h1");
+        let newCount = document.createElement("h2");
         let newUl = document.createElement("ul");
 
         // set ids for new elements
         newDiv.setAttribute("id", "results-div");
+        newTitle.setAttribute("id", "results-title");
+        newCount.setAttribute("id", "results-count");
         newUl.setAttribute("id", "results-list");
 
-        let newTitle = document.createElement("h1"); // create h1
         let titleContent = document.createTextNode("Search Results"); // create text
         newTitle.appendChild(titleContent); // add text to h1
         newDiv.appendChild(newTitle); // add h1 to div
+        newDiv.appendChild(newCount); // add h2 to div
         newDiv.appendChild(newUl); // add ul to div
 
         document.body.insertBefore(newDiv, pokeList); // add div to DOM
@@ -123,8 +135,12 @@ function removeContainer()
 // function to clear search results in between searchs 
 function refreshResults()
 {
+    // clear text in result count
+    let rc = document.getElementById("results-count"); // get result count element
+    rc.textContent = ""; // remove existing text
+
     // clear results quickly between each search
-    let rl = document.getElementById("results-list");
+    let rl = document.getElementById("results-list"); // get result list element
     while (rl.firstChild && rl != null) // so long as there are list elements
     {   
         rl.removeChild(rl.firstChild); // remove first list element
@@ -157,4 +173,21 @@ function displayResults(el)
     // add this new list element to the ul fo search results
     let searchList = document.getElementById("results-list");
     searchList.appendChild(newLi); // add li to ul
+}
+
+// function to inform user of the number of found results
+function resultCount(count)
+{
+    let resCount = document.getElementById("results-count"); // get h2 that will display the number of search results
+    
+    if (count == 1) // result must be singular
+    {
+        let countText = document.createTextNode(count + " result found"); // create text node of result count
+        resCount.appendChild(countText); // add text node to h2
+    }
+    else // result must be plural
+    {
+        let countText = document.createTextNode(count + " results found"); // create text node of result count
+        resCount.appendChild(countText); // add text node to h2
+    } 
 }

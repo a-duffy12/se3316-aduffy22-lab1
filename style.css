@@ -6,7 +6,7 @@ header {
 }
 
 header h1.page-title {
-    font-size: 50px;
+    font-size: 64px;
 }
 
 header div.search-bar {
@@ -61,6 +61,14 @@ body {
     color: black;
     text-align: center;
     padding-top: 20px;
+}
+
+#results-title {
+    font-size: 48px;
+}
+
+#results-count {
+    font-size: 36px;
 }
 
 #results-list {
