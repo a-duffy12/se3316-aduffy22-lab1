@@ -1,28 +1,26 @@
 <!DOCTYPE html>
-<html>
-
-<head lang="en">
+<html lang="en">
+<head>
     <meta charset="utf-8">
     <title>Pokédex</title>
     <meta name="description" content="Pokédex containing the first 20 entries">
     <meta name="author" content="Aiden Duffy">
     <link rel="stylesheet" href="style.css">
 </head>
-<header>
-    <h1 class="page-title">Pokédex</h1>
-    <div class="search-bar">
-        <div class="search-number">
-            <input id="number-input" type="number" onkeyup="searchNumber()" placeholder="Seach by Number">
-            <button id="number-button" onclick="searchNumber()">Search</button>
-        </div>
-        <div class="search-name">
-            <input id="name-input" type="text" onkeyup="searchName()" placeholder="Search by Name">
-            <button id="name-button" onclick="searchName()">Search</button>
-        </div>
-    </div>
-</header>
-
 <body>
+    <header>
+        <h1 class="page-title">Pokédex</h1>
+        <div class="search-bar">
+            <div class="search-number">
+                <input id="number-input" type="number" onkeyup="searchNumber()" placeholder="Seach by Number">
+                <button id="number-button" onclick="searchNumber()">Search</button>
+            </div>
+            <div class="search-name">
+                <input id="name-input" type="text" onkeyup="searchName()" placeholder="Search by Name">
+                <button id="name-button" onclick="searchName()">Search</button>
+            </div>
+        </div>
+    </header>
     <ul id="pokemon-list">
         <li class="bulbasaur">
             <h1>Bulbasaur</h1>
@@ -155,15 +153,16 @@
             <img src="pokemon/20.png" alt="Raticate">
         </li>
     </ul>
-    <script type="text/javascript" src="scripts.js"></script>
+    <script src="scripts.js"></script>
+    <footer>
+        <h1>References</h1>
+        <p><a href="https://www.pokemon.com/us/pokedex/" target="_blank">Pokédex</a></p>
+        <p><a href="https://bulbapedia.bulbagarden.net/wiki/Category:Type_color_templates" target="_blank">Type color codes</a></p>
+        <p><a href="https://www.kaggle.com/kvpratama/pokemon-images-dataset" target="_blank">Pokémon data set</a></p>
+        <p><a href="https://www.reddit.com/r/TheSilphRoad/comments/7p952h/pokemon_go_pokedex_spreadsheet/" target="_blank">Pokémon Excel</a></p>
+        <p>Author: Aiden Duffy 251008412</p>
+        <p>SE3316 Web Technologies Lab 2</p>
+    </footer>
 </body>
-<footer>
-    <h1>References</h1>
-    <p><a href="https://www.pokemon.com/us/pokedex/" target="_blank">Pokédex</a></p>
-    <p><a href="https://bulbapedia.bulbagarden.net/wiki/Category:Type_color_templates" target="_blank">Type color codes</a></p>
-    <p><a href="https://www.kaggle.com/kvpratama/pokemon-images-dataset" target="_blank">Pokémon data set</a></p>
-    <p><a href="https://www.reddit.com/r/TheSilphRoad/comments/7p952h/pokemon_go_pokedex_spreadsheet/" target="_blank">Pokémon Excel</a></p>
-    <p>Author: Aiden Duffy 251008412</p>
-    <p>SE3316 Web Technologies Lab 2</p>
-</footer>
+
 </html>
