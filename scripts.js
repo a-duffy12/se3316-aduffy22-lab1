@@ -17,6 +17,7 @@ function searchNumber()
     if ((input.value >= 1) && (input.value <= 20))
     {
         buildContainer(); // build container for search results
+        nameActive = true;
         refreshResults(); // clear results quickly between each search
 
         for (i=0; i<li.length; i++) // iterate through each list element
@@ -57,6 +58,7 @@ function searchName()
     if ((/^[a-zA-Z]+$/.test(searchText)) && (searchText.length <= 20)) // check if search contains only letters
     {
         buildContainer(); // build container for search results
+        numActive = true;
         refreshResults(); // clear results quickly between each search
 
         for (i=0; i<li.length; i++) // iterate through each list element
@@ -117,8 +119,6 @@ function buildContainer()
         newDiv.appendChild(newUl); // add ul to div
 
         document.body.insertBefore(newDiv, pokeList); // add div to DOM
-
-        nameActive = true; // name search is active
     }
 }
 
