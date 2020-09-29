@@ -5,6 +5,14 @@ let numActive, nameActive;
 numActive = false;
 nameActive = false;
 
+// get input fields as objects
+let numInput = document.getElementById("number-input");
+let nameInput = document.getElementById("name-input");
+
+// create event handlers
+numInput.addEventListener("keyup", searchNumber);
+nameInput.addEventListener("keyup", searchName);
+
 // function to search for a pokemon by number
 function searchNumber()
 {
